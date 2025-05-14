@@ -24,9 +24,9 @@ const Header = () => {
             <nav>
                 <ul>
                     <li className="active" onclick="active()"><a href="">Home</a></li>
-                    <li><a href="produtos_lista.html">Produtos</a></li>
-                    <li><a href="">Categorias</a></li>
-                    <li><a href="">Meus Pedidos</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/categorias">Categorias</a></li>
+                    <li><a href="/meus-pedidos">Meus Pedidos</a></li>
                 </ul>
             </nav>
         </header>

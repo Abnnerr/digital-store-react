@@ -1,13 +1,9 @@
-import SectionBanner from "./components/Banner";
-import SectionDestaques from "./components/Destaques";
-import Header from "./components/Header";
+import Paths from "./routes/paths";
 
 const App = () => {
   return (
     <>
-    <Header />
-    <SectionBanner />
-    <SectionDestaques />
+      <Paths />
     </>
   );
 }
