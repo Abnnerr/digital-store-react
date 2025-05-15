@@ -93,3 +93,77 @@
 // }
 // console.log(check(['t', 'e', 's', 't'], 'w'));
 
+
+// function doubleChar(str) {
+//     let letras = ''
+//     for (let i = 0; i < str.length; i++) {
+
+//         letras += str[i] + str[i]
+
+//     }
+//     return letras
+// }
+// console.log(doubleChar("String"));
+
+
+
+
+// function abbrevName(name) {
+//     let inicial = `${name[0]}.`
+//     for (let i = 0; i < name.length; i++) {
+
+//         if (name[i] == ' ') {
+//             inicial += (name[i+1])
+//         }
+
+//     }
+//     return inicial.toUpperCase()
+// }
+// console.log(abbrevName('Jonas Abner'));
+
+
+
+// function otherAngle(a, b) {
+//     let angulo3 = (180 - (a+b))
+//     return angulo3
+// }
+// console.log(otherAngle(30,60))
+
+
+
+// function findAverage(array) {
+
+//     if (array == 0) {
+//         return 0
+//     }
+//     else {
+//         let nums = 0;
+
+//         for (let i = 0; i < array.length; i++) {
+//             nums += array[i]
+
+//         }
+
+//         let media = (nums / (array.length))
+//         return media
+//     }
+
+// }
+// console.log(findAverage([1, 2, 3]));
+
+
+function solution(string) {
+    let resultado = '';
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === string[i].toUpperCase() && string[i] !== string[i].toLowerCase()) {
+            resultado += ' ' + string[i];
+        } else {
+            resultado += string[i];
+        }
+    }
+    return resultado;
+}
+
+console.log(solution('camelCase'));
+
+

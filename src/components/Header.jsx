@@ -23,7 +23,7 @@ const Header = () => {
             </div>
             <nav>
                 <ul>
-                    <li className="active" onclick="active()"><a href="">Home</a></li>
+                    <li className="active" onclick="active()"><a href="/">Home</a></li>
                     <li><a href="/produtos">Produtos</a></li>
                     <li><a href="/categorias">Categorias</a></li>
                     <li><a href="/meus-pedidos">Meus Pedidos</a></li>
