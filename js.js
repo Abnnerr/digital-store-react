@@ -152,18 +152,66 @@
 // console.log(findAverage([1, 2, 3]));
 
 
-function solution(string) {
-    let resultado = '';
-    for (let i = 0; i < string.length; i++) {
-        if (string[i] === string[i].toUpperCase() && string[i] !== string[i].toLowerCase()) {
-            resultado += ' ' + string[i];
-        } else {
-            resultado += string[i];
+// function solution(string) {
+//     let resultado = '';
+//     for (let i = 0; i < string.length; i++) {
+//         if (string[i] === string[i].toUpperCase() && string[i] !== string[i].toLowerCase()) {
+//             resultado += ' ' + string[i];
+//         } else {
+//             resultado += string[i];
+//         }
+//     }
+//     return resultado;
+// }
+
+// console.log(solution('camelCase'));
+
+
+
+// function checkForFactor(base, factor) {
+
+//     if (((base * factor) % 2) == 0) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+// console.log(checkForFactor(63,7));
+
+
+// function removeChar(str) {
+//     let letras = str.split('')
+//     letras.pop()
+//     letras.shift()
+//     return letras
+// };
+// console.log(removeChar('ola'));
+
+// function strCount(str, letter){  
+//     let contador = 0
+
+//     for (let i = 0; i < str.length; i++) {
+
+//         if(letter == str[i]) {
+//             contador += 1
+//         }
+//     }
+//     return contador
+// }
+// console.log(strCount('Hello','l'));
+
+
+
+function points(games) {
+    let contador = 0
+
+
+    for (let i = 0; games.length; i++) {
+        if (Number(games[i][0]) > Number(games[i][2])) {
+            contador += games[0]
         }
     }
-    return resultado;
+
+    return 
 }
-
-console.log(solution('camelCase'));
-
-
+console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]));
