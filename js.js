@@ -202,16 +202,34 @@
 
 
 
-function points(games) {
-    let contador = 0
+// function points(games) {
+//     let contador = 0
 
 
-    for (let i = 0; games.length; i++) {
-        if (Number(games[i][0]) > Number(games[i][2])) {
-            contador += games[0]
+//     for (let i = 0; games.length; i++) {
+//         if (Number(games[i][0]) > Number(games[i][2])) {
+//             contador += games[0]
+//         }
+//     }
+
+//     return 
+// }
+// console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]));
+
+
+
+
+function isPalindrome(x) {
+    let string = x.split('')
+    
+    for (let i = 0; i < string.length; i++) {
+        
+        if (string === string.reverse()) {
+            return true
+        }
+        else {
+            return false
         }
     }
-
-    return 
 }
-console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]));
+console.log(isPalindrome('Abner'));

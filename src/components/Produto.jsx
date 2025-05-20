@@ -1,11 +1,7 @@
 import sapato from "../assets/sapato.png"
-const Produto = () => {
-
-
-
-    
+const Produto = ({nome,categoria,narca,preco,genero,estado,desconto,id}) => {
     return (
-        <div className="card">
+        <div className="card" id="">
             <a href="/produtos/comprar">
                 <div className="imagem_card">
                     <h6>30% OFF</h6>

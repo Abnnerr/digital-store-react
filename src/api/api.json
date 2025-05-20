@@ -1,0 +1,44 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "sapato da nike",
+            "marca": "Nike",
+            "categoria": "Corrida",
+            "preco": 300,
+            "genero": "Masculino",
+            "estado": "Novo",
+            "desconto": 10
+        },
+        {
+            "id": 2,
+            "nome": "Sapato da puma",
+            "marca": "Puma",
+            "categoria": "Utilitario",
+            "preco": 300,
+            "genero": "Masculino",
+            "stado": "Usado",
+            "desconto": 5
+        },
+        {
+            "id": 3,
+            "nome": "Sapato da balenciaga",
+            "marca": "Balenciaga",
+            "categoria": "Casual",
+            "preco": 300,
+            "genero": "Masculino",
+            "stado": "Novo",
+            "desconto": 0
+        },
+        {
+            "id": 4,
+            "nome": "Sapato da adidas",
+            "marca": "Adidas",
+            "categoria": "Corrida",
+            "preco": 300,
+            "genero": "Masculino",
+            "stado": "Usado",
+            "desconto": 50
+        }
+    ]
+}
