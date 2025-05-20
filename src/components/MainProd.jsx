@@ -27,28 +27,10 @@ const SectionProdutos = () => {
             setFiltroMarca([...filtroMarca.filter(cadaMarca => cadaMarca != marca)])
             return;
         }
-        setFiltroMarca([...filtroMarca, marca])
-
+        setFiltroMarca([...filtroMarca,marca])
+        
     }
-    function verificarCategoria(categoria) {
-
-        if (filtroCategoria.includes(categoria)) {
-            setFiltroCategoria([...filtroCategoria.filter(cadaCategoria => cadaCategoria != categoria)])
-            return;
-        }
-        setFiltroCategoria([...filtroCategoria, categoria])
-
-    }
-    function verificarGenero(genero) {
-
-        if (filtroGenero.includes(genero)) {
-            setFiltroGenero([...filtroGenero.filter(cadaGenero => cadaGenero != genero)])
-            return;
-        }
-        setFiltroGenero([...filtroGenero, genero])
-
-    }
-    console.log(filtroEstado, filtroGenero, filtroCategoria, filtroMarca);
+    console.log(filtroMarca)
 
     return (
         <section id="produtos_lista">
@@ -81,10 +63,11 @@ const SectionProdutos = () => {
                         </ul>
                         <ul className="categoria">
                             <h5>Categoria</h5>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Esporte e Lazer')} />Esporte e Lazer </li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Casual')} /> Casual </li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Utilitario')} /> Utilitario </li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Corrida')} /> Corrida</li>
+                            <li><input type="checkbox" name="" id="" /> Adidas </li>
+                            <li><input type="checkbox" name="" id="" /> Calenciaga </li>
+                            <li><input type="checkbox" name="" id="" /> K-Swiss </li>
+                            <li><input type="checkbox" name="" id="" /> Nike</li>
+                            <li><input type="checkbox" name="" id="" /> Puma </li>
                         </ul>
                         <ul className="genero">
                             <h5>Genero</h5>

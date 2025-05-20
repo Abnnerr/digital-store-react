@@ -219,17 +219,37 @@
 
 
 
-function isPalindrome(x) {
-    let string = x.split('')
+// <<<<<<< HEAD
+// function isPalindrome(x) {
+//     let string = x.split('')
     
-    for (let i = 0; i < string.length; i++) {
+//     for (let i = 0; i < string.length; i++) {
         
-        if (string === string.reverse()) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-}
-console.log(isPalindrome('Abner'));
+//         if (string === string.reverse()) {
+//             return true
+//         }
+//         else {
+//             return false
+//         }
+//     }
+// }
+// console.log(isPalindrome('Abner'));
+
+// function dnaStrand(dna) {
+//     let letras = dna.split('')
+//     for (let i = 0; i < dna.length; i++) {
+
+//         if (letras[i] == 'A') {
+//             letras[i] = 'T'
+//         }else if (letras[i] == 'T') {
+//             letras[i] = 'A'
+//         }else if (letras[i] == 'G') {
+//             letras[i] = 'C'
+//         }else if (letras[i] == 'C') {
+//             letras[i] = 'G'
+//         }
+//     }
+//     return letras.join('')
+// }
+// console.log(dnaStrand("ATTGC"));
+// >>>>>>> 8d570a39a88509b989f3a13ea54c18ea54d633dc
