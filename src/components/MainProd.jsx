@@ -9,15 +9,25 @@ const SectionProdutos = () => {
 
     function verificarMarca(marca) {
 
-        if(filtroMarca.includes(marca)) {
+        if (filtroMarca.includes(marca)) {
             setFiltroMarca([...filtroMarca.filter(cadaMarca => cadaMarca != marca)])
             return;
         }
-        setFiltroMarca([...filtroMarca,marca])
-        
-    }
-    console.log(filtroMarca)
+        setFiltroMarca([...filtroMarca, marca])
 
+    }
+
+
+    function verificarCategoria(categoria) {
+
+        if (filtroCategoria.includes(categoria)) {
+            setFiltroCategoria([...filtroCategoria.filter(cadaCategoria => cadaCategoria != categoria)])
+            return
+        }
+        setFiltroCategoria([...filtroCategoria, categoria])
+    }
+
+    console.log(filtroMarca, filtroCategoria)
     return (
         <section id="produtos_lista">
             <div className="conteiner_lista_produtos">
@@ -41,19 +51,18 @@ const SectionProdutos = () => {
                         <hr />
                         <ul className="marca">
                             <h5>Marka</h5>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Adidas')}/> Adidas </li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Calenciaga')}/> Calenciaga </li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('K-Swiss')}/> K-Swiss </li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Nike')}/> Nike</li>
-                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Puma')}/> Puma </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Adidas')} /> Adidas </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Calenciaga')} /> Calenciaga </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('K-Swiss')} /> K-Swiss </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Nike')} /> Nike</li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarMarca('Puma')} /> Puma </li>
                         </ul>
                         <ul className="categoria">
                             <h5>Categoria</h5>
-                            <li><input type="checkbox" name="" id="" /> Adidas </li>
-                            <li><input type="checkbox" name="" id="" /> Calenciaga </li>
-                            <li><input type="checkbox" name="" id="" /> K-Swiss </li>
-                            <li><input type="checkbox" name="" id="" /> Nike</li>
-                            <li><input type="checkbox" name="" id="" /> Puma </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Esporte e lazer')} /> esporte </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Casual')} />casual </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Utilitario')} /> utilitario </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Corrida')} /> corrida</li>
                         </ul>
                         <ul className="genero">
                             <h5>Genero</h5>

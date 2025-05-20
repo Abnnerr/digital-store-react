@@ -202,16 +202,38 @@
 
 
 
-function points(games) {
-    let contador = 0
+// function points(games) {
+//     let contador = 0
 
 
-    for (let i = 0; games.length; i++) {
-        if (Number(games[i][0]) > Number(games[i][2])) {
-            contador += games[0]
+//     for (let i = 0; games.length; i++) {
+//         if (Number(games[i][0]) > Number(games[i][2])) {
+//             contador += games[0]
+//         }
+//     }
+
+//     return 
+// }
+// console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]));
+
+
+
+
+
+function dnaStrand(dna) {
+    let letras = dna.split('')
+    for (let i = 0; i < dna.length; i++) {
+
+        if (letras[i] == 'A') {
+            letras[i] = 'T'
+        }else if (letras[i] == 'T') {
+            letras[i] = 'A'
+        }else if (letras[i] == 'G') {
+            letras[i] = 'C'
+        }else if (letras[i] == 'C') {
+            letras[i] = 'G'
         }
     }
-
-    return 
+    return letras.join('')
 }
-console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]));
+console.log(dnaStrand("ATTGC"));
