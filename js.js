@@ -222,9 +222,9 @@
 // <<<<<<< HEAD
 // function isPalindrome(x) {
 //     let string = x.split('')
-    
+
 //     for (let i = 0; i < string.length; i++) {
-        
+
 //         if (string === string.reverse()) {
 //             return true
 //         }
@@ -253,3 +253,21 @@
 // }
 // console.log(dnaStrand("ATTGC"));
 // >>>>>>> 8d570a39a88509b989f3a13ea54c18ea54d633dc
+
+function countPositivesSumNegatives(input) {
+    if (input.length === 0) return []
+
+    let contadorPositivo = 0
+    let somaNegativo = 0
+
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] > 0) {
+            contadorPositivo++
+        } else if (input[i] < 0) {
+            somaNegativo += input[i]
+        }
+    }
+
+    return [contadorPositivo, somaNegativo]
+}
+console.log(countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14]));

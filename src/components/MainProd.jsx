@@ -6,31 +6,55 @@ const SectionProdutos = () => {
     const [filtroMarca, setFiltroMarca] = useState([]);
     const [filtroCategoria, setFiltroCategoria] = useState([]);
     const [filtroGenero, setFiltroGenero] = useState([]);
-    const [filtroEstado, setFiltroEstado] = useState(['Novo']);
+    const [filtroEstado, setFiltroEstado] = useState("Novo");
     const [produtos, setProdutos] = useState([]);
-
+    const [produtosFiltrados, setProdutosFiltrados] = useState([]);
 
     async function buscarProdutos() {
-
         try {
-            const response = await AXIOS.get("/produtos")
-            setProdutos(response.data)
-        } catch(erro) {
-            alert(erro.message)
+            const response = await AXIOS.get("/produtos");
+            setProdutos(response.data);
+            setProdutosFiltrados(response.data);
+        } catch (error) {
+            alert(error.message);
         }
-
     }
-    
-    function verificarMarca(marca) {
 
+    function verificarMarca(marca) {
         if (filtroMarca.includes(marca)) {
-            setFiltroMarca([...filtroMarca.filter(cadaMarca => cadaMarca != marca)])
+            setFiltroMarca([...filtroMarca.filter(cadaMarca => cadaMarca != marca)]);
             return;
         }
-        setFiltroMarca([...filtroMarca,marca])
-        
+        setFiltroMarca([...filtroMarca, marca]);
     }
-    console.log(filtroMarca)
+
+    function verificarCategoria(categoria) {
+        if (filtroCategoria.includes(categoria)) {
+            setFiltroCategoria([...filtroCategoria.filter(cadaCategoria => cadaCategoria != categoria)]);
+            return;
+        }
+        setFiltroCategoria([...filtroCategoria, categoria]);
+    }
+
+    function verificarGenero(genero) {
+        if (filtroGenero.includes(genero)) {
+            setFiltroGenero([...filtroGenero.filter(cadaGenero => cadaGenero != genero)]);
+            return;
+        }
+        setFiltroGenero([...filtroGenero, genero]);
+    }
+
+    useEffect(() => {
+        buscarProdutos();
+    }, []);
+
+    useEffect(() => {
+        if (filtroMarca.length > 0) {
+            setProdutosFiltrados([...produtos.filter(produto => filtroMarca.includes(produto.marca))])
+            return;
+        }
+        setProdutosFiltrados([...produtos]);
+    }, [filtroMarca])
 
     return (
         <section id="produtos_lista">
@@ -63,11 +87,10 @@ const SectionProdutos = () => {
                         </ul>
                         <ul className="categoria">
                             <h5>Categoria</h5>
-                            <li><input type="checkbox" name="" id="" /> Adidas </li>
-                            <li><input type="checkbox" name="" id="" /> Calenciaga </li>
-                            <li><input type="checkbox" name="" id="" /> K-Swiss </li>
-                            <li><input type="checkbox" name="" id="" /> Nike</li>
-                            <li><input type="checkbox" name="" id="" /> Puma </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Esporte e Lazer')}/>Esporte e Lazer </li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Casual')}/>Casual</li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Utilitario')}/>Utilitario</li>
+                            <li><input type="checkbox" name="" id="" onChange={() => verificarCategoria('Corrida')}/>Corrida</li>
                         </ul>
                         <ul className="genero">
                             <h5>Genero</h5>
@@ -83,17 +106,13 @@ const SectionProdutos = () => {
                     </div>
                     <div className="lista_produtos">
                         <div className="cards">
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
-                            <Produto />
+                            {
+                                produtosFiltrados.length > 0 && produtosFiltrados.map(produto => (
+                                    <Produto
+                                        {...produto}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
